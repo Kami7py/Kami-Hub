@@ -1,83 +1,137 @@
-local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "kamihub | MM2 GODLY DUPE 🔪 ", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
-local Window = Rayfield:CreateWindow({
-   Name = "KAMI MM2 GODLY GLITCH 🔪",
-   LoadingTitle = "MM2 GODLY GLITCH 🔪",
-   LoadingSubtitle = "Kami",
-   ConfigurationSaving = {
-      Enabled = false,
-      FolderName = nil, -- Create a custom folder for your hub/game
-      FileName = "Example Hub"
-   },
+getgenv().tpPlace = "string"
+getgenv().autotp = true
+getgenv().rb = true
+getgenv().spin = true
+getgenv().bspin = true
+
+OrionLib:MakeNotification({
+	Name = "kamihub | warning",
+	Content = "❗❗ MUST BE OVER LEVEL 15 ❗❗",
+	Image = "rbxassetid://4483345998",
+	Time = 5
 })
 
-local MainTab = Window:CreateTab("🎲 Misc", nil) -- Title, Image
-local MainSection = MainTab:CreateSection("Main")
-
-Rayfield:Notify({
-   Title = "YOU FOUND OP GLITCH...",
-   Content = "DONT LEAK",
-   Duration = 5,
-   Image = 13047715178,
-   Actions = { -- Notification Buttons
-      Ignore = {
-         Name = "Okay!",
-         Callback = function()
-         print("The user tapped Okay!")
-      end
-   },
-},
+OrionLib:MakeNotification({
+	Name = "kamihub | warning",
+	Content = "❗❗ MUST BE A GODLY TO USE MOST OF THE SCRIPT ❗❗",
+	Image = "rbxassetid://4483345998",
+	Time = 5
 })
 
-local Button = MainTab:CreateButton({
-   Name = "Bypass ANTI-CHEAT",
-   Callback = function()
-       --Toggles the infinite jump between on or off on every script run
-_G.infinjump = not _G.infinjump
+OrionLib:MakeNotification({
+	Name = "kamihub | warning",
+	Content = "❗❗ THIS SCRIPT WILL NOT WORK IF YOU ARENT IN MM2 ❗❗",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
 
-if _G.infinJumpStarted == nil then
-	--Ensures this only runs once to save resources
-	_G.infinJumpStarted = true
-	
-	--Notifies readiness
-	game.StarterGui:SetCore("SendNotification", {Title="Kami Hub"; Text="Bypass ANTI-CHEAT Activated!"; Duration=5;})
-
-	--The actual infinite jump
-	local plr = game:GetService('Players').LocalPlayer
-	local m = plr:GetMouse()
-	m.KeyDown:connect(function(k)
-		if _G.infinjump then
-			if k:byte() == 32 then
-			humanoid = game:GetService'Players'.LocalPlayer.Character:FindFirstChildOfClass('Humanoid')
-			humanoid:ChangeState('Jumping')
-			wait()
-			humanoid:ChangeState('Seated')
-			end
-		end
-	end)
+function Teleport(teleportPlace)
+    local player = game.Players.LocalPlayer
+    player.Character.HumanoidRootPart.CFrame = teleportPlace
 end
-   end,
+
+function autotp()
+     while getgenv().autotp == true do
+	 Teleport(game:GetService("Workspace").Wins.SteampunkStage.CFrame)
+	 wait(0.1)
+	end
+end
+
+function rb()
+	 while getgenv().rb == true do
+      game:GetService("ReplicatedStorage").RebirthEvent:FireServer()
+	wait(0.1)
+   end
+end
+
+function spin()
+	 while getgenv().spin == true do
+     game:GetService("ReplicatedStorage").SpinRemote:InvokeServer()
+      wait(0.1)
+   end
+end
+
+function bspin()
+	 while getgenv().bspin == true do
+	 game:GetService("ReplicatedStorage").SpinnerUpdate:FireServer("BuySpin")
+     wait(0.1)
+   end
+end
+
+local TpTab = Window:MakeTab({
+	Name = "Auto Farm",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
 })
 
-local Toggle = MainTab:CreateToggle({
-   Name = "Godly Glitch",
-   CurrentValue = false,
-   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-
-            game.StarterGui:SetCore("SendNotification", {Title="Kami Hub"; Text="Godly Glitch Activated"; Duration=5;})
-
-   end,
+local otherTab = Window:MakeTab({
+	Name = "Other",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
 })
 
-local Slider = MainTab:CreateSlider({
-   Name = "WalkSpeed",
-   Range = {1, 100},
-   Increment = 1,
-   Suffix = "Speed",
-   CurrentValue = 16,
-   Flag = "sliderws", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
-   end,
+TpTab:AddParagraph("Note","Seila Porra")
+
+TpTab:AddButton({
+	Name = "Bypass Anti-Cheat",
+	Callback = function()
+      		game.StarterGui:SetCore("SendNotification", {Title="kamihub"; Text="Bypass ANTI-CHEAT Activated!"; Duration=5;})
+  	end    
+})
+
+TpTab:AddTextbox({
+	Name = "Nome da Faca SLÁ",
+	Default = "WRITE HERE",
+	TextDisappear = true,
+	Callback = function(Value)
+		print(Value)
+	end	  
+})
+
+TpTab:AddToggle({
+	Name = "Dupe Godly",
+	Default = false,
+	Callback = function(Value)
+		getgenv().autotp = Value
+        autotp()
+	end    
+})
+
+otherTab:AddToggle({
+	Name = "Auto Cu",
+	Default = false,
+	Callback = function(Value)
+		getgenv().spin = Value
+        spin()
+	end    
+})
+
+otherTab:AddToggle({
+	Name = "Auto Bu",
+	Default = false,
+	Callback = function(Value)
+		getgenv().bspin = Value
+        bspin()
+	end    
+})
+
+otherTab:AddToggle({
+	Name = "Auto Sla",
+	Default = false,
+	Callback = function(Value)
+		getgenv().rb = Value
+        rb()
+	end    
+})
+
+TpTab:AddDropdown({
+	Name = "Select",
+	Default = "1",
+	Options = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",},
+	Callback = function(Value)
+	    getgenv().tpPlace = Value  
+	end    
 })
