@@ -106,31 +106,30 @@ TpTab:AddToggle({
 	end    
 })
 
-otherTab:AddToggle({
-	Name = "Auto Cu",
-	Default = false,
+otherTab:AddSlider({
+	Name = "WalkSpeed",
+	Min = 0,
+	Max = 100,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Speed",
 	Callback = function(Value)
-		getgenv().spin = Value
-        spin()
-	end    
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+   end
 })
 
-otherTab:AddToggle({
-	Name = "Auto Bu",
-	Default = false,
+otherTab:AddSlider({
+	Name = "JumpPower",
+	Min = 0,
+	Max = 100,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Jump",
 	Callback = function(Value)
-		getgenv().bspin = Value
-        bspin()
-	end    
-})
-
-otherTab:AddToggle({
-	Name = "Auto Sla",
-	Default = false,
-	Callback = function(Value)
-		getgenv().rb = Value
-        rb()
-	end    
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = (Value)
+   end
 })
 
 TpTab:AddDropdown({
