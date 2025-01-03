@@ -11,21 +11,21 @@ OrionLib:MakeNotification({
 	Name = "kamihub | warning",
 	Content = "❗❗ MUST BE OVER LEVEL 15 ❗❗",
 	Image = "rbxassetid://4483345998",
-	Time = 5
+	Time = 8
 })
 
 OrionLib:MakeNotification({
 	Name = "kamihub | warning",
 	Content = "❗❗ MUST BE A GODLY TO USE MOST OF THE SCRIPT ❗❗",
 	Image = "rbxassetid://4483345998",
-	Time = 5
+	Time = 8
 })
 
 OrionLib:MakeNotification({
 	Name = "kamihub | warning",
 	Content = "❗❗ THIS SCRIPT WILL NOT WORK IF YOU ARENT IN MM2 ❗❗",
 	Image = "rbxassetid://4483345998",
-	Time = 5
+	Time = 8
 })
 
 function Teleport(teleportPlace)
@@ -62,7 +62,7 @@ function bspin()
 end
 
 local TpTab = Window:MakeTab({
-	Name = "Auto Farm",
+	Name = "Dupe",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -73,23 +73,29 @@ local otherTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-TpTab:AddParagraph("Note","Seila Porra")
+TpTab:AddParagraph("Note","❗Must follow all the steps to work❗")
+
+TpTab:AddParagraph("STEP 1","break MM2 Anti-Cheat to prevent kick")
 
 TpTab:AddButton({
 	Name = "Bypass Anti-Cheat",
 	Callback = function()
-      		game.StarterGui:SetCore("SendNotification", {Title="kamihub"; Text="Bypass ANTI-CHEAT Activated!"; Duration=5;})
+      		game.StarterGui:SetCore("SendNotification", {Title="kamihub"; Text="Bypass ANTI-CHEAT Activated ✔️"; Duration=5;})
   	end    
 })
 
+TpTab:AddParagraph("STEP 2","write the name of the desired knife, press enter to conform and reset the character")
+
 TpTab:AddTextbox({
-	Name = "Nome da Faca SLÁ",
+	Name = "🔪 Knife/Gun 🔫",
 	Default = "WRITE HERE",
 	TextDisappear = true,
 	Callback = function(Value)
 		print(Value)
 	end	  
 })
+
+TpTab:AddParagraph("STEP 3","check Dupe Godly only if you had done all above ")
 
 TpTab:AddToggle({
 	Name = "Dupe Godly",
@@ -129,8 +135,8 @@ otherTab:AddToggle({
 
 TpTab:AddDropdown({
 	Name = "Select",
-	Default = "1",
-	Options = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",},
+	Default = "Success Rate 100%",
+	Options = {"Success Rate 100%", "Success Rate 80%"},
 	Callback = function(Value)
 	    getgenv().tpPlace = Value  
 	end    
