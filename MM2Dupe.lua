@@ -1,7 +1,26 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "kamihub | MM2 GODLY DUPE 🔪 ", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
+OrionLib:MakeNotification({
+	Name = "kamihub | warning",
+	Content = "❗❗ MUST BE OVER LEVEL 15 ❗❗",
+	Image = "rbxassetid://4483345998",
+	Time = 8
+})
 
+OrionLib:MakeNotification({
+	Name = "kamihub | warning",
+	Content = "❗❗ MUST BE A GODLY TO USE MOST OF THE SCRIPT ❗❗",
+	Image = "rbxassetid://4483345998",
+	Time = 8
+})
+
+OrionLib:MakeNotification({
+	Name = "kamihub | warning",
+	Content = "❗❗ THIS SCRIPT WILL NOT WORK IF YOU ARENT IN MM2 ❗❗",
+	Image = "rbxassetid://4483345998",
+	Time = 8
+})
 
 local Tab = Window:MakeTab({
     Name = "Changer",
