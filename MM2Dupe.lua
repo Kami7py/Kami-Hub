@@ -23,6 +23,53 @@ OrionLib:MakeNotification({
 })
 
 local Tab = Window:MakeTab({
+	Name = "Dupe",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddParagraph("Note","❗Must follow all the steps to work❗")
+
+Tab:AddParagraph("STEP 1","break MM2 Anti-Cheat to prevent kick")
+
+Tab:AddButton({
+	Name = "Bypass Anti-Cheat",
+	Callback = function()
+      		game.StarterGui:SetCore("SendNotification", {Title="kamihub"; Text="Bypass ANTI-CHEAT Activated ✔️"; Duration=5;})
+  	end    
+})
+
+Tab:AddParagraph("STEP 2","write the name of the desired knife, press enter to conform and reset your character")
+
+Tab:AddTextbox({
+	Name = "🔪 Knife/Gun 🔫",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		print(Value)
+	end	  
+})
+
+Tab:AddParagraph("STEP 3","check Dupe Godly only if you had done all above and reset your character")
+
+Tab:AddDropdown({
+	Name = "Select",
+	Default = "Success Rate 100%",
+	Options = {"Success Rate 100%", "Success Rate 80%", "Sucess Rate 50%"},
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+Tab:AddToggle({
+	Name = "Dupe Godly",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+local Tab = Window:MakeTab({
     Name = "Changer",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
