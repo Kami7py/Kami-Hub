@@ -146,13 +146,13 @@ Tab:AddButton({
     end
 })
 
-Tab:AddParagraph("Guide:","Write the knife/gun you want press enter, select, and click Open Crate")
-
 local Tab = Window:MakeTab({
 	Name = "Trade Scam",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
+
+Tab:AddParagraph("Guide:","Write the knife/gun you want press enter, select, and click Open Crate")
 
 Tab:AddToggle({
 	Name = "Freeze Trade",
