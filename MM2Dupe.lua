@@ -77,6 +77,8 @@ local Tab = Window:MakeTab({
 
 Tab:AddParagraph("Note","❗Must follow all the steps to work❗")
 
+Tab:AddParagraph("Guide:","Write the knife/gun you want press enter, select, and click Open Crate")
+
 boxmodule = require(game:GetService("ReplicatedStorage").Modules.BoxModule)
 poop = getsenv(game:GetService("Players").LocalPlayer.PlayerGui.MainGUI.Inventory.NewItem)._G
 itemdatabase = require(game:GetService("ReplicatedStorage").Database.Sync.Item)
@@ -119,7 +121,7 @@ function gettable(uu)
 end
 
 nikita = Tab:AddDropdown({
-    Name = "Pick Item",
+    Name = "Select Item",
     Default = "please filter your 🔪 Knife/Gun 🔫",
     Options = {"please filter your 🔪 Knife/Gun 🔫"},
     Callback = function(Value)
@@ -145,8 +147,6 @@ Tab:AddButton({
         opencrate(getgenv().newValue)
     end
 
-Tab:AddParagraph("Guide:","Write the knife/gun you want press enter, select, and click Open Crate")
-
 })
 
 local Tab = Window:MakeTab({
@@ -160,6 +160,11 @@ Tab:AddToggle({
 	Default = false,
 	Callback = function(Value)
 		      		OrionLib:MakeNotification({
+	Name = "kamihub | Trade Scam",
+	Content = "Freeze Trade Has Been Enabled",
+	Image = "rbxassetid://4483345998",
+	Time = 3
+				OrionLib:MakeNotification({
 	Name = "kamihub | Trade Scam",
 	Content = "Freeze Trade Has Been Enabled",
 	Image = "rbxassetid://4483345998",
