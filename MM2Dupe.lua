@@ -163,11 +163,6 @@ Tab:AddToggle({
 	Content = "Freeze Trade Has Been Enabled",
 	Image = "rbxassetid://4483345998",
 	Time = 3
-      				OrionLib:MakeNotification({
-	Name = "kamihub | Trade Scam",
-	Content = "❗❗ DO NOT CLICK AGAIN ❗❗",
-	Image = "rbxassetid://4483345998",
-	Time = 7
 })
 
 	end    
