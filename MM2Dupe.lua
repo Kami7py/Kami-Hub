@@ -165,7 +165,6 @@ Tab:AddToggle({
 	Image = "rbxassetid://4483345998",
 	Time = 3
 })
-
 	end    
 })
 
@@ -192,7 +191,6 @@ Tab:AddButton({
 	Image = "rbxassetid://4483345998",
 	Time = 7
 })
-
   	end    
 })
 
