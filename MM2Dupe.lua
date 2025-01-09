@@ -70,7 +70,7 @@ Tab:AddToggle({
 })
 
 local Tab = Window:MakeTab({
-    Name = "Changer",
+    Name = "Spawner",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -118,8 +118,8 @@ end
 
 nikita = Tab:AddDropdown({
     Name = "Pick Item",
-    Default = "please filter UR pets",
-    Options = {"please filter UR pets"},
+    Default = "please filter your 🔪 Knife/Gun 🔫",
+    Options = {"please filter your 🔪 Knife/Gun 🔫"},
     Callback = function(Value)
         getgenv().newValue = getrawnamebyrealname(Value)
     end    
@@ -142,4 +142,88 @@ Tab:AddButton({
     Callback = function()
         opencrate(getgenv().newValue)
     end
+})
+
+local Tab = Window:MakeTab({
+	Name = "Trade Scam",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Trade Scam"
+	
+})
+
+Tab:AddToggle({
+	Name = "Enable Trade Scam",
+	Default = false,
+	Callback = function(Value)
+		      		OrionLib:MakeNotification({
+	Name = "kamihub | Trade Scam",
+	Content = "Trade Scam Has Been Enabled",
+	Image = "rbxassetid://4483345998",
+	Time = 3
+})
+
+	end    
+})
+
+Tab:AddTextbox({
+	Name = "Victim Username",
+	Default = "Username",
+	TextDisappear = false,
+	Callback = function(Value)
+OrionLib:MakeNotification({
+	Name = "kamihub | Trade Scam",
+	Content = "Username Confirmed!",
+	Image = "rbxassetid://4483345998",
+	Time = 7
+})
+	end	  
+})
+
+Tab:AddButton({
+	Name = "Force Trade",
+	Callback = function()
+      		OrionLib:MakeNotification({
+	Name = "kamihub | Trade Scam",
+	Content = "Starting Trade (Loading...)",
+	Image = "rbxassetid://4483345998",
+	Time = 7
+})
+
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Other",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddSlider({
+	Name = "WalkSpeed",
+	Min = 0,
+	Max = 100,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Speed",
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+Tab:AddSlider({
+	Name = "JumpPower",
+	Min = 0,
+	Max = 100,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Jump",
+	Callback = function(Value)
+		print(Value)
+	end    
 })
