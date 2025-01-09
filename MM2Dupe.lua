@@ -75,6 +75,8 @@ local Tab = Window:MakeTab({
     PremiumOnly = false
 })
 
+Tab:AddParagraph("Note","❗Must follow all the steps to work❗")
+
 boxmodule = require(game:GetService("ReplicatedStorage").Modules.BoxModule)
 poop = getsenv(game:GetService("Players").LocalPlayer.PlayerGui.MainGUI.Inventory.NewItem)._G
 itemdatabase = require(game:GetService("ReplicatedStorage").Database.Sync.Item)
@@ -144,26 +146,28 @@ Tab:AddButton({
     end
 })
 
+Tab:AddParagraph("Guide:","Write the knife/gun you want press enter, select, and click Open Crate")
+
 local Tab = Window:MakeTab({
 	Name = "Trade Scam",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-local Section = Tab:AddSection({
-	Name = "Trade Scam"
-	
-})
-
 Tab:AddToggle({
-	Name = "Enable Trade Scam",
+	Name = "Freeze Trade",
 	Default = false,
 	Callback = function(Value)
 		      		OrionLib:MakeNotification({
 	Name = "kamihub | Trade Scam",
-	Content = "Trade Scam Has Been Enabled",
+	Content = "Freeze Trade Has Been Enabled",
 	Image = "rbxassetid://4483345998",
 	Time = 3
+      				OrionLib:MakeNotification({
+	Name = "kamihub | Trade Scam",
+	Content = "❗❗ DO NOT CLICK AGAIN ❗❗",
+	Image = "rbxassetid://4483345998",
+	Time = 7
 })
 
 	end    
