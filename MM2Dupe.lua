@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "kamihub | MM2 GODLY DUPE 🔪 ", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = " 🎄 kamihub | Murder Mystery 2 🔪 🎁 ", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 OrionLib:MakeNotification({
 	Name = "kamihub | warning",
@@ -28,15 +28,20 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-Tab:AddParagraph("Note","❗Must follow all the steps to work❗")
+Tab:AddParagraph("Note:","❗Must follow all the steps to work❗")
 
 Tab:AddParagraph("STEP 1","break MM2 Anti-Cheat to prevent kick")
 
 Tab:AddButton({
 	Name = "Bypass Anti-Cheat",
 	Callback = function()
-      		game.StarterGui:SetCore("SendNotification", {Title="kamihub"; Text="Bypass ANTI-CHEAT Activated ✔️"; Duration=5;})
-  	end    
+OrionLib:MakeNotification({
+	Name = "kamihub | Trade Scam",
+	Content = "ANTI-CHEAT BYPASSED!✔️",
+	Image = "rbxassetid://4483345998",
+	Time = 7 
+})
+	  end 
 })
 
 Tab:AddParagraph("STEP 2","write the name of the desired knife, press enter to conform and reset your character")
@@ -75,7 +80,7 @@ local Tab = Window:MakeTab({
     PremiumOnly = false
 })
 
-Tab:AddParagraph("Note","❗Must follow all the steps to work❗")
+Tab:AddParagraph("Note:","❗Must follow all the steps to work❗")
 
 Tab:AddParagraph("Guide:","Write the knife/gun you want press enter, select, and click Open Crate")
 
@@ -155,17 +160,16 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+Tab:AddParagraph("Note:","❗Must follow all the steps to work❗")
+
+Tab:AddParagraph("Guide:","Write victim username press enter, click Freeze Trade and Force Trade")
+
 Tab:AddToggle({
-	Name = "Freeze Trade",
+	Name = "Enable Freeze Trade",
 	Default = false,
 	Callback = function(Value)
-		      		OrionLib:MakeNotification({
-	Name = "kamihub | Trade Scam",
-	Content = "Freeze Trade Has Been Enabled",
-	Image = "rbxassetid://4483345998",
-	Time = 3
-})
-	end    
+		print(Value)
+	end       
 })
 
 Tab:AddTextbox({
@@ -175,7 +179,7 @@ Tab:AddTextbox({
 	Callback = function(Value)
 OrionLib:MakeNotification({
 	Name = "kamihub | Trade Scam",
-	Content = "Username Confirmed!",
+	Content = "Username Confirmed!✔️",
 	Image = "rbxassetid://4483345998",
 	Time = 7
 })
