@@ -164,10 +164,6 @@ Tab:AddToggle({
 	Content = "Freeze Trade Has Been Enabled",
 	Image = "rbxassetid://4483345998",
 	Time = 3
-	Name = "kamihub | Trade Scam",
-	Content = "Freeze Trade Has Been Enableed",
-	Image = "rbxassetid://4483345998",
-	Time = 3
 })
 
 	end    
